@@ -1,6 +1,6 @@
 {
   "name": "@binary/xt-venus",
-  "version": "1.0.0-RI-2020.4",
+  "version": "1.0.1-RI-2020.4",
   "description": "xt-venus",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -23,11 +23,10 @@
   ],
   "license": "UNLICENSED",
   "dependencies": {
-    "@binary/type": "^1.0.3",
-    "@xingrz/download2": "^9.0.0-alpha.3"
+    "@binary/type": "^1.0.4",
+    "@xingrz/download2": "^9.0.0-alpha.4"
   },
   "devDependencies": {
-    "@types/download": "^8.0.1",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.1",
     "jest": "^27.3.1",
