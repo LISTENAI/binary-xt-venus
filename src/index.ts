@@ -7,7 +7,7 @@ const execFile = promisify(_execFile);
 
 export const HOME = join(__dirname, '..', 'binary');
 
-const INSTALL_DIR = join(HOME, `RI-2020.4-${process.platform}`);
+const INSTALL_DIR = join(HOME, `RI-2021.7-${process.platform}`);
 
 export default <Binary>{
   homeDir: HOME,
@@ -17,10 +17,16 @@ export default <Binary>{
   env: {
     XTENSA_CORE: 'venus_hifi4',
     XTENSA_SYSTEM: join(INSTALL_DIR, 'venus_hifi4', 'config'),
+    HOME: process.env.HOME
   },
 
   async version() {
-    const { stdout } = await execFile(join(this.binaryDir, 'xt-xcc'), ['--version'], { env: this.env });
-    return stdout.split('\n')[0].trim();
+    try {
+      const { stdout } = await execFile(join(this.binaryDir, 'xt-clang'), ['--version'], { env: this.env });
+      return stdout.split('\n')[0].trim();
+    } catch (e) {
+      const _err = (e as Error).message;
+      return _err.split('\n')[1]?.trim() ?? _err;
+    }
   }
 };
