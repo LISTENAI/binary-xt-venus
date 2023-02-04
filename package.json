@@ -1,11 +1,10 @@
 {
   "name": "@binary/xt-venus",
-  "version": "1.0.1-RI-2020.4",
+  "version": "1.0.2-RI-2021.7",
   "description": "xt-venus",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "os": [
-    "win32",
     "linux"
   ],
   "publishConfig": {
@@ -19,7 +18,8 @@
   },
   "author": "xychen <xychen@listenai.com>",
   "maintainers": [
-    "xychen <xychen@listenai.com"
+    "xychen <xychen@listenai.com>",
+    "ywang <wangyang2@listenai.com>"
   ],
   "license": "UNLICENSED",
   "dependencies": {
@@ -28,9 +28,9 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.1",
+    "@types/node": "^16.11.7",
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7",
-    "typescript": "^4.4.4"
+    "typescript": "^4.9.5"
   }
 }
